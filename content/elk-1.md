@@ -3,6 +3,7 @@ Date: 2016-02-15 08:25
 Category: How-Tos
 Tags: ELK, ElasticSearch, Kibana, Logstash, Logging, Graphs
 Authors: Davide D'Amico
+Status: published
 Summary: How to setup the ELK (ElasticSearch, Logstash, Kibana) stack on FreeBSD
 
 ### 0. Introduction
