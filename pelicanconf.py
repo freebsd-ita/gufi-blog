@@ -12,6 +12,9 @@ STATIC_PATHS = ['images', 'pdf']
 TIMEZONE = 'Europe/Rome'
 
 DEFAULT_LANG = u'en'
+DEFAULT_METADATA = {
+    'status': 'draft',
+}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None 
@@ -22,15 +25,15 @@ AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (
-        ('Sito GUFI', 'http://www.gufi.org'),
-        ('FreeBSD', 'http://www.freebsd.org'),
-        )
+    ('Sito GUFI', 'http://www.gufi.org'),
+    ('FreeBSD', 'http://www.freebsd.org'),
+)
 
 # Social widget
 SOCIAL = (
-        ('Twitter', 'https://twitter.com/freebsd_it'),
-        ('Facebook', 'https://facebook.com/groups/76921630456'),
-        )   
+    ('Twitter', 'https://twitter.com/freebsd_it'),
+    ('Facebook', 'https://facebook.com/groups/76921630456'),
+)   
 
 THEME = "/usr/local/www/pelican-themes/pelican-themes/pelican-bootstrap3/"
 
@@ -45,7 +48,6 @@ PAGE_SAVE_AS = '{slug}/index.html'
 
 YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
 MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
-
 
 ########  THEME SPECIFICS ########
 
