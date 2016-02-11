@@ -33,7 +33,7 @@ SOCIAL = (
         ('LinkedIN', 'https://it.linkedin.com/in/GUFI'),
         )   
 
-THEME = "/Users/max/repos/pelican-bootstrap3/"
+THEME = "/usr/local/www/pelican-themes/pelican-themes/pelican-bootstrap3/"
 
 DEFAULT_PAGINATION = 5
 
@@ -62,9 +62,7 @@ DISPLAY_TAGS_INLINE = "True"
 ABOUT_ME = "We're the Italian FreeBSD Users Group!"
 #AVATAR = "images/max.jpg"
 
-#GITHUB_USER = "stucchimax" # Not for now.  Maybe later.
-
-#TWITTER_USERNAME = "stucchimax"
+TWITTER_USERNAME = "freebsd_it"
 #TWITTER_WIDGET_ID = "675741800607457280"
 
 # Uncomment following line if you want document-relative URLs when developing

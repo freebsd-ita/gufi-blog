@@ -196,7 +196,7 @@ A few words on the SSL stuff
 Now you can start logforwarder-java on your clients and logstash on your server with:
 
 ```
-root@elk $ service logstash start
+root@elk # service logstash start
 ```
 
 then take a look at _/var/log/logstash.log_, our planet should still be safe.
