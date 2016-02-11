@@ -29,8 +29,7 @@ LINKS = (
 # Social widget
 SOCIAL = (
         ('Twitter', 'https://twitter.com/freebsd_it'),
-        ('Facebook', 'https://facebook.com/'),
-        ('LinkedIN', 'https://it.linkedin.com/in/GUFI'),
+        ('Facebook', 'https://facebook.com/groups/76921630456'),
         )   
 
 THEME = "/usr/local/www/pelican-themes/pelican-themes/pelican-bootstrap3/"
@@ -63,7 +62,7 @@ ABOUT_ME = "We're the Italian FreeBSD Users Group!"
 #AVATAR = "images/max.jpg"
 
 TWITTER_USERNAME = "freebsd_it"
-#TWITTER_WIDGET_ID = "675741800607457280"
+TWITTER_WIDGET_ID = "697694977250496512"
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
