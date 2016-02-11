@@ -1,5 +1,5 @@
 Title: ELK First part 
-Date: 2015-12-16 08:25
+Date: 2016-02-15 08:25
 Category: How-Tos
 Tags: ELK, ElasticSearch, Kibana, Logstash, Logging, Graphs
 Authors: Davide D'Amico

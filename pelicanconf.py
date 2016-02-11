@@ -46,6 +46,7 @@ PAGE_SAVE_AS = '{slug}/index.html'
 YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
 MONTH_ARCHIVE_SAVE_AS = '{date:%Y}/{date:%m}/index.html'
 
+GOOGLE_ANALYTICS = "UA-73386630-1"
 
 ########  THEME SPECIFICS ########
 
