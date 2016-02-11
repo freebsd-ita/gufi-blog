@@ -202,3 +202,5 @@ root@elk # service logstash start
 then take a look at _/var/log/logstash.log_, our planet should still be safe.
 
 
+
+Now stay tuned for the second part of this amazing tutorial, where we'll talk about kibana with screenshots and incredible special effects and probably a spoiler on Star Wars Episode VIII (just kidding): until then, have fun!
