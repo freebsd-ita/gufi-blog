@@ -57,10 +57,10 @@ saying something like 'OMG, I'm so nerd')
 Ok, now we need to enable them (in order to start or restart):
 
 ```
-operator@elk:~ % echo 'elasticsearch_enable="YES"' > /etc/rc.conf.d/elasticsearch
-operator@elk:~ % printf 'logstash_enable="YES"\nlogstash_log="YES"\nlogstash_log_file="/var/log/logstash.log"' > /etc/rc.conf.d/logstash
-operator@elk:~ % echo 'kibana_enable="YES"' > /etc/rc.conf.d/kibana
-operator@elk:~ % echo 'nginx_enable="YES"' > /etc/rc.conf.d/nginx
+root@elk:~ # echo 'elasticsearch_enable="YES"' > /etc/rc.conf.d/elasticsearch
+root@elk:~ # printf 'logstash_enable="YES"\nlogstash_log="YES"\nlogstash_log_file="/var/log/logstash.log"' > /etc/rc.conf.d/logstash
+root@elk:~ # echo 'kibana_enable="YES"' > /etc/rc.conf.d/kibana
+root@elk:~ # echo 'nginx_enable="YES"' > /etc/rc.conf.d/nginx
 ```
 
 Hold on, man. It's not time to start up anything yet.
@@ -106,7 +106,7 @@ Basically we are changing where to save data, indexes and logs and to listen on 
 Now we can finally start using our cpu cycles, so let's start ElasticSearch with:
 
 ```
-root@elk $ service elasticsearch start
+root@elk # service elasticsearch start
 ```
 
 Check its logfile (and/or use ps/pgrep) to see if elasticsearch is happy.
