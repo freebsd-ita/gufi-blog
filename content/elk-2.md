@@ -6,12 +6,9 @@ Authors: Davide D'Amico
 Summary: Second part on the series of how-to's on the ELK (ElasticSearch, Logstash, Kibana) stack on FreeBSD
 
 
-```
-This article is the second of a three-piece how to.
-
-You can find the first part [here]({filename}/elk-1.md)
-```
-
+> This article is the second of a three-piece how to.
+>
+>You can find the first part [here]({filename}/elk-1.md)
 
 
 Ok ok, so if you are here it means that your Boss didn't agree to buy you a Splunk instance, right?
