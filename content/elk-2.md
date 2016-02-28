@@ -24,7 +24,7 @@ and started **elasticsearch** and **logstash** (bonus, they worked!).
 We installed kibana as well, right? So time to configure it:
 
 
-```
+```bash
 
 cat > /usr/local/etc/kibana.yml << EOF
 server.port: 5602
@@ -88,7 +88,7 @@ I think that we can use our elk stack not for our (boring) myapp, but for a more
 Make sure we have something like this in our _/usr/local/etc/nginx.conf_:
 
 
-```
+```nginx
 
 log_format upstream '$remote_addr - $host [$time_local] "$request" $status $body_bytes_sent "$http_referer"'
                     '"$http_user_agent" "$http_x_forwarded_for" [$upstream_addr] "$upstream_cache_status"'
