@@ -3,7 +3,6 @@ Date: 2016-02-23 06:44
 Category: How-Tos
 Tags: ELK, ElasticSearch, Kibana, Logstash, Logging, Graphs
 Authors: Davide D'Amico
-Status: published
 Summary: Second part on the series of how-to's on the ELK (ElasticSearch, Logstash, Kibana) stack on FreeBSD
 
 
@@ -22,7 +21,7 @@ and started **elasticsearch** and **logstash** (bonus, they worked!).
 We installed kibana as well, right? So time to configure it:
 
 
-```
+```bash
 
 cat > /usr/local/etc/kibana.yml << EOF
 server.port: 5602
@@ -37,7 +36,7 @@ EOF
 and to start it:
 
 
-```
+```bash
 
 root@elk:~ # service kibana start
 
@@ -47,14 +46,14 @@ I guess your friends will be highly disappointed by the fact that you are restri
 Oh sorry, I forgot you don't have any friends but well, **just in case**, it's better to create a vhost in our nginx configuration (i.e. http://kibana.foo.bar):
 
 
-```
+```nginx
 
 server {
   server_name kibana.foo.bar;
   listen 80;
-  proxy_set_header   Host             $host;
-  proxy_set_header   X-Real-IP        $remote_addr;
-  proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+  proxy_set_header Host             $host;
+  proxy_set_header X-Real-IP        $remote_addr;
+  proxy_set_header X-Forwarded-For  $proxy_add_x_forwarded_for;
   proxy_set_header Upgrade $http_upgrade;
   proxy_set_header Connection "upgrade";
   proxy_set_header Cookie "";
@@ -86,7 +85,7 @@ I think that we can use our elk stack not for our (boring) myapp, but for a more
 Make sure we have something like this in our _/usr/local/etc/nginx.conf_:
 
 
-```
+```nginx
 
 log_format upstream '$remote_addr - $host [$time_local] "$request" $status $body_bytes_sent "$http_referer"'
                     '"$http_user_agent" "$http_x_forwarded_for" [$upstream_addr] "$upstream_cache_status"'
