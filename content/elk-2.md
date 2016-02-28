@@ -286,7 +286,7 @@ As bucket we'll use X-Axis -> Aggregation -> Date Histogram
 In Options we can choose Smooth Lines then we can click on the Play button: if you were not busy watching a Netflix movie, you should see something like this:
 
 
-![Kibana]({filename}/images/elk-2/kibana12_visualise_nginx_GET_200.png)
+![Kibana]({filename}/images/elk-2/kibana12_visualize_nginx_GET_200.png)
 
 
 Nice, isn't it?
