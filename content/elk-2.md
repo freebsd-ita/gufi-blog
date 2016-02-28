@@ -7,11 +7,11 @@ Status: published
 Summary: Second part on the series of how-to's on the ELK (ElasticSearch, Logstash, Kibana) stack on FreeBSD
 
 
+```
+This article is the second of a three-piece how to.
 
-**This article is the second of a three-piece how to.
-
-You can find the first part [here]({filename}/elk-1.md)**
-
+You can find the first part [here]({filename}/elk-1.md)
+```
 
 
 
@@ -19,10 +19,11 @@ Ok ok, so if you are here it means that your Boss didn't agree to buy you a Splu
 
 And after having **accidentaly** trashed all his emails you decided to give ELK a try so yes, let's continue.
 
-In the first part (available here: https://blog.gufi.org/2016/02/15/elk-first-part/) we installed a bunch of ports
-and started elasticsearch and logstash (bonus, they worked!).
+In the first part (available [here]({filename}/elk-1.md)) we installed a bunch of ports
+and started **elasticsearch** and **logstash** (bonus, they worked!).
 
 We installed kibana as well, right? So time to configure it:
+
 
 ```
 
@@ -37,6 +38,7 @@ EOF
 
 
 and to start it:
+
 
 ```
 
@@ -70,6 +72,7 @@ server {
 
 ```
 
+
 Why auth_basic? Well, basically because I don't trust anyone (but this is another story) and because kibana has no auth mechanism, so a good-old fashioned auth_basic came to the rescue.
 
 Pointing your preferred browser to http://kibana.foo.bar you should see something like this:
@@ -85,6 +88,7 @@ I think that we can use our elk stack not for our (boring) myapp, but for a more
 
 Make sure we have something like this in our _/usr/local/etc/nginx.conf_:
 
+
 ```
 
 log_format upstream '$remote_addr - $host [$time_local] "$request" $status $body_bytes_sent "$http_referer"'
@@ -93,9 +97,11 @@ log_format upstream '$remote_addr - $host [$time_local] "$request" $status $body
 
 ```
 
+
 * may I suggest a service nginx reload?
 
 In _/usr/local/etc/logstash/logstash.conf_ we should have:
+
 
 ```
 
@@ -109,7 +115,9 @@ filter {
 
 ```
 
+
 Let's modify that with this:
+
 
 ```
 
@@ -127,6 +135,7 @@ filter {
 }
 
 ```
+
 
 * May I suggest to restart logstash, sir?
 
@@ -147,6 +156,7 @@ what are we missing? Right, a beer.
 
 Well, actually we are missing something that 'monitors' /var/log/nginx/nginx.access.log and that, in case of new events, sends deltas of it to a remote endpoint (basically something like splunk-forwarder); for our purposes we'll use something called logstash-forwarder-java.
 I know, I know: it's not in our ports, but feel free to use the one with have in our ports (the one golang based), I'll continue using the java-based one (we have already installed java, dude).
+
 
 
 ```
@@ -192,6 +202,7 @@ sudo /usr/loal/logstash-forwarder/bin/start.sh
 
 ```
 
+
 Whoa, now you should see something like:
 
 ![Kibana]({filename}/images/elk-2/kibana2_logstash_forwarder.png)
@@ -207,9 +218,8 @@ Fire up http://kibana.foo.bar, we should see something like:
 Finally, a green button that I can click! (yes, you should actually click on it).
 
 Now, let's go in the Discovery Tab and you should see something like:
-![Kibana]({filename}/images/elk-2/image7.png)
-kibana4_default_page
-![Kibana]({filename}/images/elk-2/image8.png)
+
+![Kibana]({filename}/images/elk-2/kibana4_default_page.png)
 
 Yes, it's time to create screenshots for friends (and for twitter and reddit, oh, social life!)
 
@@ -289,7 +299,6 @@ Here, using the '+' button you can add already saved graphs to have a fancy (and
 ![Kibana]({filename}/images/elk-2/kibana13_dashboard.png)
 
 
-
 How great is it, man!
 
-In the next article we'll focus on ElastAlert, aka creating alerts based on our logs (and if I'll have space, I'll talk about myself. Maybe a little. Ok, won't).
+In the next article we'll focus on ElastAlert, aka creating alerts based on our logs (and if I'll have space, I'll talk about myself. Maybe a little. Ok, I won't).
