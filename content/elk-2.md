@@ -8,7 +8,7 @@ Summary: Second part on the series of how-to's on the ELK (ElasticSearch, Logsta
 
 > This article is the second of a three-piece how to.
 >
->You can find the first part [here]({filename}/elk-1.md)
+> You can find the first part [here]({filename}/elk-1.md)
 
 
 Ok ok, so if you are here it means that your Boss didn't agree to buy you a Splunk instance, right?
@@ -194,7 +194,7 @@ LF_NAME="logstash-forwarder-java-\${LF_VER}"
 exit 0
 EOF
 
-sudo /usr/loal/logstash-forwarder/bin/start.sh
+sudo /usr/local/logstash-forwarder/bin/start.sh
 
 ```
 
@@ -208,7 +208,7 @@ meaning that _logstash-forwarder_ is working and it's sending events to logstash
 Fire up http://kibana.foo.bar, we should see something like:
 
 
-![Kibana]({filename}/images/elk-2/kibana3_create_index.png
+![Kibana]({filename}/images/elk-2/kibana3_create_index.png)
 
 
 Finally, a green button that I can click! (yes, you should actually click on it).
