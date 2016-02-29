@@ -16,7 +16,7 @@ Ok ok, so if you are here it means that your Boss didn't agree to buy you a Splu
 And after having **accidentally** trashed all his emails you decided to give ELK a try so yes, let's continue.
 
 
-In the [first part]({filename}/elk-1.md) we installed a bunch of ports
+In the [first part]({filename}/elk-1.md) <a href='({filename}/elk-1.md)' target='_blank'>first part</a> we installed a bunch of ports
 and started **elasticsearch** and **logstash** (bonus, they worked!).
 
 
