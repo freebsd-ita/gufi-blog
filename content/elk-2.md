@@ -13,9 +13,9 @@ Summary: Second part on the series of how-to's on the ELK (ElasticSearch, Logsta
 
 Ok ok, so if you are here it means that your Boss didn't agree to buy you a Splunk instance, right?
 
-And after having **accidentaly** trashed all his emails you decided to give ELK a try so yes, let's continue.
+And after having **accidentally** trashed all his emails you decided to give ELK a try so yes, let's continue.
 
-In the first part (available [here]({filename}/elk-1.md)) we installed a bunch of ports
+In the first part we installed a bunch of ports
 and started **elasticsearch** and **logstash** (bonus, they worked!).
 
 We installed kibana as well, right? So time to configure it:
