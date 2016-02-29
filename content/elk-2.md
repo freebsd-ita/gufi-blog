@@ -174,6 +174,7 @@ I know, I know: it's not in our ports, but feel free to use the one with have in
 # We'll install logstash-forwarder-java in /usr/local/logstash-forwarder
 # So let's create a new tmux panel and start the dance!
 
+sudo su -l
 mkdir -p /usr/local/logstash-forwarder
 cd /usr/local/logstash-forwarder
 fetch https://github.com/didfet/logstash-forwarder-java/releases/download/0.2.3/logstash-forwarder-java-0.2.3-bin.tar.gz
@@ -208,7 +209,7 @@ LF_NAME="logstash-forwarder-java-\${LF_VER}"
 exit 0
 EOF
 
-sudo /usr/local/logstash-forwarder/bin/start.sh
+/usr/local/logstash-forwarder/bin/start.sh
 
 ```
 
