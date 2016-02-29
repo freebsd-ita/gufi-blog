@@ -312,4 +312,4 @@ Here, using the '+' button you can add already saved graphs to have a fancy (and
 
 How great is it, man!
 
-In the next article we'll focus on ElastAlert, aka creating alerts based on our logs (and if I'll have space, I'll talk about myself. Maybe a little. Ok, I won't).
+In the next article we'll focus on [ElastAlert](https://github.com/Yelp/elastalert), aka creating alerts based on our logs (and if I'll have space, I'll talk about myself. Maybe a little. Ok, I won't).
