@@ -137,6 +137,7 @@ filter {
 
 So we are 'teaching' logstash how to recognize our nginx events mapping them with fields.
 How to learn to map real life events to logstash grok filters? Well, you have different choices:
+
 * using /dev/random > /usr/local/etc/logstash/logstash.conf
 * using google
 * scrolling down
