@@ -1,4 +1,4 @@
-Title: ELK second part 
+Title: ELK Second part 
 Date: 2016-02-23 06:44
 Category: How-Tos
 Tags: ELK, ElasticSearch, Kibana, Logstash, Logging, Graphs
@@ -141,7 +141,7 @@ How to learn to map real life events to logstash grok filters? Well, you have di
 - using google
 - scrolling down
 
-The smarter (and faster) way to do this is using: http://grokdebug.herokuapp.com/ with real events (aka: tail from your nginx access log file).
+The smarter (and faster) way to do this is using: (http://grokdebug.herokuapp.com/) with real events (aka: tail from your nginx access log file).
 
 Is everything still fine? Damn, this is quite boring isn't it?
 
