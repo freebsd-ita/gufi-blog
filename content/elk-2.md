@@ -155,7 +155,7 @@ I know, I know: it's not in our ports, but feel free to use the one with have in
 
 
 
-```
+```bash
 
 # We'll install logstash-forwarder-java in /usr/local/logstash-forwarder
 # So let's create a new tmux panel and start the dance!
