@@ -287,7 +287,7 @@ Told'ya it was simple, dud! (Gangsta, isn't it?)
 
 Let's call this search **nginx_200_search** and save it (Using the **Save Search** button) then move to the **Visualize** Tab to...
 
-CREATE A NEW VISUALIZATION (because everyone loves graphs!)
+CREATE A NEW VISUALIZATION (because everybody loves graphs!)
 
 In this case we'll use a **Line chart** -> **From a saved search** -> **nginx_200_search**
 
