@@ -151,8 +151,8 @@ So, a quick recap:
 nginx is saving logs to (i.e.) _/var/log/nginx/nginx.access.log_, logstash knows how to decompose nginx access log events and where to save them so
 what are we missing? Right, a beer.
 
-Well, actually we are missing something that 'monitors' /var/log/nginx/nginx.access.log and that, in case of new events, sends deltas of it to a remote endpoint (basically something like splunk-forwarder); for our purposes we'll use something called logstash-forwarder-java.
-I know, I know: it's not in our ports, but feel free to use the one with have in our ports (the one golang based), I'll continue using the java-based one (we have already installed java, dude).
+Well, actually we are missing something that 'monitors' /var/log/nginx/nginx.access.log and that, in case of new events, sends deltas of it to a remote endpoint (basically something like splunk-forwarder); for our purposes we'll use something called **logstash-forwarder-java**.
+I know, I know: it's not in our ports, but feel free to use the one with have in our ports (the one Golang based), I'll continue using the java-based one (we have already installed java, dude).
 
 
 
@@ -214,7 +214,7 @@ Fire up http://kibana.foo.bar, we should see something like:
 
 Finally, a green button that I can click! (yes, you should actually click on it).
 
-Now, let's go in the Discovery Tab and you should see something like:
+Now, let's go in the **Discovery** Tab and you should see something like:
 
 ![Kibana]({filename}/images/elk-2/kibana4_default_page.png)
 
@@ -249,12 +249,11 @@ so our events are mapped like:
 ![Kibana]({filename}/images/elk-2/kibana8_event_detail.png)
 
 
-Well, it' ok-ish: I see really few fields I can search/aggregate on (host, _type) and a big 'blog' called message. I can search, yes but what
-if I'd like to see event logs related to http/404?
+Well, it' ok-ish: I see really few fields I can search/aggregate on (host, _type) and a big 'blog' called message. I can search, yes but what if I'd like to see event logs related to **http/404**?
 
 We defined our nginx grok filter to 'inspect' this big message blob and to decompose it in field:value pairs. So, let's use them!
 
-Back on Kibana -> Settings -> Click on 'logstash-*' index on your left -> Click on the 'refresh field list' button
+Back on **Kibana** -> **Settings** -> Click on 'logstash-*' index on your left -> Click on the 'refresh field list' button
 Then you should see something like:
 
 
