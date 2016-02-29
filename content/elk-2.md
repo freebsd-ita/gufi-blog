@@ -15,7 +15,7 @@ Ok ok, so if you are here it means that your Boss didn't agree to buy you a Splu
 
 And after having **accidentally** trashed all his emails you decided to give ELK a try so yes, let's continue.
 
-In the first part we installed a bunch of ports
+In the [first part]({filename}/elk-1.md) we installed a bunch of ports
 and started **elasticsearch** and **logstash** (bonus, they worked!).
 
 We installed kibana as well, right? So time to configure it:
@@ -137,9 +137,9 @@ filter {
 
 So we are 'teaching' logstash how to recognize our nginx events mapping them with fields.
 How to learn to map real life events to logstash grok filters? Well, you have different choices:
-- using /dev/random > /usr/local/etc/logstash/logstash.conf
-- using google
-- scrolling down
+* using /dev/random > /usr/local/etc/logstash/logstash.conf
+* using google
+* scrolling down
 
 The smarter (and faster) way to do this is using: <http://grokdebug.herokuapp.com/> with real events (aka: tail from your nginx access log file).
 
