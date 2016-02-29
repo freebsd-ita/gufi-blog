@@ -15,8 +15,10 @@ Ok ok, so if you are here it means that your Boss didn't agree to buy you a Splu
 
 And after having **accidentally** trashed all his emails you decided to give ELK a try so yes, let's continue.
 
+
 In the [first part]({filename}/elk-1.md) we installed a bunch of ports
 and started **elasticsearch** and **logstash** (bonus, they worked!).
+
 
 We installed kibana as well, right? So time to configure it:
 
@@ -43,7 +45,7 @@ root@elk:~ # service kibana start
 ```
 
 I guess your friends will be highly disappointed by the fact that you are restricting your kibana instance to 127.0.0.1, right?
-Oh sorry, I forgot you don't have any friends but well, **just in case**, it's better to create a vhost in our nginx configuration (i.e. http://kibana.foo.bar):
+Oh sorry, I forgot you don't have any friends but well, **just in case**, it's better to create a vhost in our **NGINX** configuration (i.e. *http://kibana.foo.bar*):
 
 
 ```nginx
@@ -71,16 +73,20 @@ server {
 
 Why auth_basic? Well, basically because I don't trust anyone (but this is another story) and because kibana has no auth mechanism, so a good-old fashioned auth_basic came to the rescue.
 
+
 Pointing your preferred browser to http://kibana.foo.bar you should see something like this:
 
 ![Kibana]({filename}/images/elk-2/kibana1_configure_index.png)
 
 Well, nothing fancy right? And a grey button with 'Unable to fetch mapping blablabla' and that's it? No wait, are you switching to Ubuntu?
+
 Please don't, this is 'normal': basically kibana doesn't find any event and so doesn't know what to show and how to show it.
 
 So before enjoing our brand new kibana instance we need to push data to elasticsearch.
 
-I think that we can use our ELK stack not for our (boring) myapp, but for a more interesting nginx access log.
+
+I think that we can use our ELK stack not for our (boring) myapp, but for a more interesting **NGINX access log**.
+
 
 Make sure we have something like this in our _/usr/local/etc/nginx.conf_:
 
@@ -135,23 +141,30 @@ filter {
 
 * May I suggest to restart logstash, sir?
 
-So we are 'teaching' logstash how to recognize our nginx events mapping them with fields.
+So we are *teaching* logstash how to recognize our nginx events mapping them with fields.
+
+
 How to learn to map real life events to logstash grok filters? Well, you have different choices:
 
 * using /dev/random > /usr/local/etc/logstash/logstash.conf
 * using google
 * scrolling down
 
+
 The smarter (and faster) way to do this is using: <http://grokdebug.herokuapp.com/> with real events (aka: tail from your nginx access log file).
+
 
 Is everything still fine? Damn, this is quite boring isn't it?
 
+
 So, a quick recap:
 
-nginx is saving logs to (i.e.) _/var/log/nginx/nginx.access.log_, logstash knows how to decompose nginx access log events and where to save them so
-what are we missing? Right, a beer.
+nginx is saving logs to (i.e.) _/var/log/nginx/nginx.access.log_, logstash knows how to decompose nginx access log events and where to save them so what are we missing? Right, a beer.
 
-Well, actually we are missing something that 'monitors' /var/log/nginx/nginx.access.log and that, in case of new events, sends deltas of it to a remote endpoint (basically something like splunk-forwarder); for our purposes we'll use something called **logstash-forwarder-java**.
+Well, actually we are missing something that 'monitors' **/var/log/nginx/nginx.access.log** and that, in case of new events, sends deltas of it to a remote endpoint (basically something like splunk-forwarder).
+
+For our purposes we'll use something called **logstash-forwarder-java**.
+
 I know, I know: it's not in our ports, but feel free to use the one with have in our ports (the one Golang based), I'll continue using the java-based one (we have already installed java, dude).
 
 
@@ -205,6 +218,7 @@ Whoa, now you should see something like:
 ![Kibana]({filename}/images/elk-2/kibana2_logstash_forwarder.png)
 
 meaning that _logstash-forwarder_ is working and it's sending events to logstash (using the lumberjack protocol).
+
 
 Fire up http://kibana.foo.bar, we should see something like:
 
