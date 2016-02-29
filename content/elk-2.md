@@ -80,7 +80,7 @@ Please don't, this is 'normal': basically kibana doesn't find any event and so d
 
 So before enjoing our brand new kibana instance we need to push data to elasticsearch.
 
-I think that we can use our elk stack not for our (boring) myapp, but for a more interesting nginx access log.
+I think that we can use our ELK stack not for our (boring) myapp, but for a more interesting nginx access log.
 
 Make sure we have something like this in our _/usr/local/etc/nginx.conf_:
 
@@ -141,7 +141,7 @@ How to learn to map real life events to logstash grok filters? Well, you have di
 - using google
 - scrolling down
 
-The smarter (and faster) way to do this is using: (http://grokdebug.herokuapp.com/) with real events (aka: tail from your nginx access log file).
+The smarter (and faster) way to do this is using: <http://grokdebug.herokuapp.com/> with real events (aka: tail from your nginx access log file).
 
 Is everything still fine? Damn, this is quite boring isn't it?
 
