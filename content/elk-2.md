@@ -2,6 +2,7 @@ Title: ELK Second part
 Date: 2016-02-23 06:44
 Category: How-Tos
 Tags: ELK, ElasticSearch, Kibana, Logstash, Logging, Graphs
+Status: published
 Authors: Davide D'Amico
 Summary: Second part on the series of how-to's on the ELK (ElasticSearch, Logstash, Kibana) stack on FreeBSD
 
