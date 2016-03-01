@@ -101,7 +101,7 @@ log_format upstream '$remote_addr - $host [$time_local] "$request" $status $body
 ```
 
 
-* may I suggest a service nginx reload?
+* may I suggest to reload nginx (with service nginx configtest && service nginx reload)?
 
 In _/usr/local/etc/logstash/logstash.conf_ we should have:
 
