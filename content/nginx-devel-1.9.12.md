@@ -45,40 +45,38 @@ to check its configuration before upgrading it.
 
 This time the configtest reported:
 ```
-dave@srv1:~> sudo service nginx configtest                                                              
-Performing sanity check on nginx configuration:                                                         
-nginx: [emerg] unknown directive "more_set_headers" in /usr/local/etc/nginx/nginx.conf:26               
+dave@srv1:~> sudo service nginx configtest
+Performing sanity check on nginx configuration:
+nginx: [emerg] unknown directive "more_set_headers" in /usr/local/etc/nginx/nginx.conf:26
 nginx: configuration file /usr/local/etc/nginx/nginx.conf test failed
 ```
 
 Uhm... weird... let's investigate:
 ```
-dave@srv1:/usr/ports/www/nginx-devel> sudo make showconfig | grep HEADERS                               
+dave@srv1:/usr/ports/www/nginx-devel> sudo make showconfig | grep HEADERS
      HEADERS_MORE=on: 3rd party headers_more module
 ```
 So the 3rd party module has been included and should have been compiled.
 
 Time to ask this question to */usr/ports/UPDATING*:
 ```
-[...]
-20160217:                                                                                               
+20160217:
   AFFECTS: users of www/nginx-devel
   AUTHOR: osa@FreeBSD.org
   Dynamic modules support has been enabled for the following third-party
   modules, in case of usage of these modules please update nginx
-  configuration file for load these modules:                                                            
-
+  configuration file for load these modules:
+  
   load_module "modules/ngx_dynamic_upstream_module.so";
   load_module "modules/ngx_http_small_light_module.so";
-[...]
 ```
 
 Oh, so let's fix */usr/local/etc/nginx/nginx.conf*:
 ```
 dave@srv1:/usr/local/etc/nginx> sudo diff -uh nginx.conf nginx.conf.new                                 
---- nginx.conf  2016-03-10 11:25:00.034727000 +0100                                                     
-+++ nginx.conf.new      2016-03-10 11:24:53.920473000 +0100                                             
-@@ -1,3 +1,5 @@                                                                                         
+--- nginx.conf  2016-03-10 11:25:00.034727000 +0100
++++ nginx.conf.new      2016-03-10 11:24:53.920473000 +0100
+@@ -1,3 +1,5 @@
 +load_module /usr/local/etc/nginx/modules/ngx_http_headers_more_filter_module.so;
 +
  worker_processes  1;
