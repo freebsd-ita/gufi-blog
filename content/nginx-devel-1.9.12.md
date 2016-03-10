@@ -2,6 +2,7 @@ Title: Upgrading www/nginx-devel to 1.9.12
 Date: 2016-03-10 16:10
 Category: How-Tos
 Tags: Nginx, FreeBSD, Portmaster, Ports, Devel
+Status: published
 Authors: Davide D'Amico
 Summary: Changes I applied to nginx.conf while upgrading nginx-devel to 1.9.12
 
