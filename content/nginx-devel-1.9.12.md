@@ -5,7 +5,7 @@ Tags: Nginx, FreeBSD, Portmaster, Ports, Devel
 Authors: Davide D'Amico
 Summary: Changes I applied to nginx.conf while upgrading nginx-devel to 1.9.12
 
-On a VM where I have few personal website I use **www/nginx-devel** to act as a:
+On a VM where I have few personal websites I use **www/nginx-devel** to act as a:
 - webserver (with **php-fpm**)
 - reverse proxy (for stuff like **grafana** and **opentsdb**)
 
@@ -31,7 +31,7 @@ dave@srv1:~> pkg info | grep ^nginx
 nginx-devel-nopcre-1.9.12      Robust and small WWW server
 ```
 
-Well, will see what's that later.
+Well, we will take a look at it later on.
 
 In case of nginx, after an upgrade I usually run a:
 ```
@@ -73,7 +73,7 @@ Time to ask this question to */usr/ports/UPDATING*:
 [...]
 ```
 
-Oh, so let's fix /usr/local/etc/nginx/nginx.conf:
+Oh, so let's fix */usr/local/etc/nginx/nginx.conf*:
 ```
 dave@srv1:/usr/local/etc/nginx> sudo diff -uh nginx.conf nginx.conf.new                                 
 --- nginx.conf  2016-03-10 11:25:00.034727000 +0100                                                     
@@ -106,7 +106,7 @@ dave@srv1:/usr/ports/www/nginx-devel> grep -B 2 '\-\-with-pcre' Makefile
 LIB_DEPENDS+=   libpcre.so:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre
 ```
-So after having recompiled nginx-devel with HTTP_REWRITE everything went fine:
+So after recompiling nginx-devel with HTTP_REWRITE everything went fine:
 ```
 dave@srv1:~> sudo service nginx configtest
 Performing sanity check on nginx configuration:
