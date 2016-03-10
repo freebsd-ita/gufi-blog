@@ -12,21 +12,21 @@ On a VM where I have few personal websites I use **www/nginx-devel** to act as a
 Why? Because sometimes I like living on the edge (yey).
 
 This morning after a:
-```
-sudo portsnap fetch && portsnap update
+```bash
+dave@srv1:~> sudo portsnap fetch && portsnap update
 ```
 **nginx-devel-1.9.12** popped out from
-```
-sudo pkg_version -vL\=
+```bash
+dave@srv1:~> sudo pkg_version -vL\=
 ```
 
 Cool, let's give it a try with:
-```
+```bash
 sudo portmaster www/nginx-devel
 ```
 
 But hey, what's this *-nopcre* tag?
-```
+```bash
 dave@srv1:~> pkg info | grep ^nginx
 nginx-devel-nopcre-1.9.12      Robust and small WWW server
 ```
@@ -34,17 +34,17 @@ nginx-devel-nopcre-1.9.12      Robust and small WWW server
 Well, we will take a look at it later on.
 
 In case of nginx, after an upgrade I usually run a:
-```
-sudo service nginx configtest
+```bash
+dave@srv1:~> sudo service nginx configtest
 ```
 and immediately after:
-```
-sudo service nginx upgrade
+```bash
+dave@srv1:~> sudo service nginx upgrade
 ```
 to check its configuration before upgrading it.
 
 This time the configtest reported:
-```
+```bash
 dave@srv1:~> sudo service nginx configtest
 Performing sanity check on nginx configuration:
 nginx: [emerg] unknown directive "more_set_headers" in /usr/local/etc/nginx/nginx.conf:26
@@ -52,13 +52,14 @@ nginx: configuration file /usr/local/etc/nginx/nginx.conf test failed
 ```
 
 Uhm... weird... let's investigate:
-```
+```baash
 dave@srv1:/usr/ports/www/nginx-devel> sudo make showconfig | grep HEADERS
      HEADERS_MORE=on: 3rd party headers_more module
 ```
 So the 3rd party module has been included and should have been compiled.
 
 Time to ask this question to */usr/ports/UPDATING*:
+
 ```
 20160217:
   AFFECTS: users of www/nginx-devel
@@ -69,10 +70,11 @@ Time to ask this question to */usr/ports/UPDATING*:
   
   load_module "modules/ngx_dynamic_upstream_module.so";
   load_module "modules/ngx_http_small_light_module.so";
+  
 ```
 
 Oh, so let's fix */usr/local/etc/nginx/nginx.conf*:
-```
+```bash
 dave@srv1:/usr/local/etc/nginx> sudo diff -uh nginx.conf nginx.conf.new                                 
 --- nginx.conf  2016-03-10 11:25:00.034727000 +0100
 +++ nginx.conf.new      2016-03-10 11:24:53.920473000 +0100
@@ -85,7 +87,7 @@ dave@srv1:/usr/local/etc/nginx> sudo diff -uh nginx.conf nginx.conf.new
 ```
 We should be good, then (yeah, why are modules installed under */usr/local/etc/nginx/modules*?).
 
-```
+```bash
 dave@srv1:~> sudo service nginx configtest
 Performing sanity check on nginx configuration:
 nginx: [emerg] without PCRE library "gzip_disable" supports builtin "msie6" and "degradation" mask only
@@ -93,19 +95,19 @@ in /usr/local/etc/nginx/nginx.conf:46
 nginx: configuration file /usr/local/etc/nginx/nginx.conf test failed
 ```
 What's that, now?
-```
+```bash
 dave@srv1:~> sed -n '46,46p' /usr/local/etc/nginx/nginx.conf
     gzip_disable "MSIE [1-6]\.";
 ```
 Ok, this shouldn't be an issue but I want the old behaviour, so what module should I enable?
-```
+```bash
 dave@srv1:/usr/ports/www/nginx-devel> grep -B 2 '\-\-with-pcre' Makefile
 .if ${PORT_OPTIONS:MHTTP_REWRITE} || defined(USE_HTTP_REWRITE)
 LIB_DEPENDS+=   libpcre.so:${PORTSDIR}/devel/pcre
 CONFIGURE_ARGS+=--with-pcre
 ```
 So after recompiling nginx-devel with HTTP_REWRITE everything went fine:
-```
+```bash
 dave@srv1:~> sudo service nginx configtest
 Performing sanity check on nginx configuration:
 nginx: the configuration file /usr/local/etc/nginx/nginx.conf syntax is ok
