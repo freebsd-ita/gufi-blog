@@ -1,3 +1,10 @@
+Title: Upgrading www/nginx-devel to 1.9.12
+Date: 2016-03-10 16:10
+Category: How-Tos
+Tags: Nginx, FreeBSD, Portmaster, Ports, Devel
+Authors: Davide D'Amico
+Summary: Changes I applied to nginx.conf while upgrading nginx-devel to 1.9.12
+
 On a VM where I have few personal website I use **www/nginx-devel** to act as a:
 - webserver (with **php-fpm**)
 - reverse proxy (for stuff like **grafana** and **opentsdb**)
