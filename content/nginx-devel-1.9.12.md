@@ -58,7 +58,7 @@ dave@srv1:/usr/ports/www/nginx-devel> sudo make showconfig | grep HEADERS
 ```
 So the 3rd party module has been included and should have been compiled.
 
-Time to ask this question to /usr/ports/UPDATING:
+Time to ask this question to */usr/ports/UPDATING*:
 ```
 [...]
 20160217:                                                                                               
@@ -85,7 +85,7 @@ dave@srv1:/usr/local/etc/nginx> sudo diff -uh nginx.conf nginx.conf.new
  events {
 
 ```
-We should be good, then (yeah, why modules are installed under /usr/local/etc/nginx/modules?).
+We should be good, then (yeah, why are modules installed under */usr/local/etc/nginx/modules*?).
 
 ```
 dave@srv1:~> sudo service nginx configtest
