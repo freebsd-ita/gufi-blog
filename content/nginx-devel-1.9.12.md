@@ -6,8 +6,8 @@ Authors: Davide D'Amico
 Summary: Changes I applied to nginx.conf while upgrading nginx-devel to 1.9.12
 
 On a VM where I have few personal websites I use **www/nginx-devel** to act as a:
-- webserver (with **php-fpm**)
-- reverse proxy (for stuff like **grafana** and **opentsdb**)
+  - webserver (with **php-fpm**)
+  - reverse proxy (for stuff like **grafana** and **opentsdb**)
 
 Why? Because sometimes I like living on the edge (yey).
 
