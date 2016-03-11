@@ -15,7 +15,7 @@ Why? Because sometimes I like living on the edge (yey).
 
 This morning after a:
 ```
-dave@srv1:~> sudo portsnap fetch && portsnap update
+dave@srv1:~> sudo portsnap fetch update
 ```
 **nginx-devel-1.9.12** popped out from
 ```
