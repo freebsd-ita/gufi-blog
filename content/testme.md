@@ -2,7 +2,6 @@ Title: Upgrading www/nginx-devel to 1.9.12
 Date: 2016-03-11 14:10
 Category: How-Tos
 Tags: FreeBSD
-Status: published
 Authors: Davide D'Amico
 Summary: Testing html code
 
