@@ -214,6 +214,7 @@ Many of us, sysadmins (or gods), have used Nagios and its derivatives for years 
 Tools like ELK or OpenTSDB/InfluxDB/KairosDB and Bosun/Prometheus have been created to give us a new generation of more suitable tools in environments that become bigger and bigger: I know, to create and manage an ELK stack (or a OpenTSDB/Grafana/Bosun stack) requires more effort than to manage a Nagios box, but it's an overhead you will soon get used to (and probably you already have an hadoop/hbase installation to manage, right?).
 
 In this case, having an in house tool to parse your application logs will allow you:
+
 * to blame developers if something goes wrong (just in case you need further reasons to)
 * to not give them access to any production machines (yes, they will ask to, anyway)
 * to be able to search all your logs at once (like grepping on a syslog-ng basedir with improved superpowers) or with a better semantics (i.e. spotting trends)
