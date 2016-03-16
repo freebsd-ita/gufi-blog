@@ -103,7 +103,7 @@ Create the rules directory
 mkdir -p /usr/local/elastalert/etc/rules
 ```
 
-Create an alert (frequency based) that will send an email if more than 9 events will happen in 1 hour with status: 404 and type: nginx
+Create an alert (frequency based) that will send an email if more than 9 events will happen in 1 hour with ***status: 404*** and ***type: nginx***
 
 In __/usr/local/elastalert/etc/rules/frequency_nginx_404.yaml__
 
