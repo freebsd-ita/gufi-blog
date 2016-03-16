@@ -30,7 +30,7 @@ sudo su
 ```
 
 
-Install py-virtualenv
+2. Install py-virtualenv
 
 ```bash
 
@@ -38,7 +38,7 @@ portmaster devel/py-virtualenv
 
 ```
 
-Create and use a virtualenv
+3. Create and use a virtualenv
 
 ```bash
 virtualenv /usr/local/elastalert
@@ -46,7 +46,7 @@ source /usr/local/elastalert/bin/activate
 mkdir -p /usr/local/elastalert/etc
 ```
 
-Download and install the repo
+4. Download and install the repo
 
 
 ```bash
@@ -60,8 +60,9 @@ python setup.py install
 pip install -r requirements.txt
 # the first time it will (probably) fail due to an error related to argparse
 pip install -r requirements.txt
+```
 
-Create the elastalert config file in __/usr/local/elastalert/etc/config.yml__
+4. Create the elastalert config file in __/usr/local/elastalert/etc/config.yml__
 
 ```yaml
 rules_folder: /usr/local/elastalert/etc/rules
@@ -96,13 +97,13 @@ alert_time_limit:
   days: 2
 ```
 
-Create the rules directory
+5. Create the rules directory
 
 ```bash
 mkdir -p /usr/local/elastalert/etc/rules
 ```
 
-Create an alert (frequency based) that will send an email if more than 9 events will happen in 1 hour with status: 404 and type: nginx
+6. Create an alert (frequency based) that will send an email if more than 9 events will happen in 1 hour with status: 404 and type: nginx
 
 In __/usr/local/elastalert/etc/rules/frequency_nginx_404.yaml__
 
@@ -128,7 +129,7 @@ email:
 
 ```
 
-Create an index for metadata storage
+7. Create an index for metadata storage
 
 ```bash
 
@@ -147,14 +148,14 @@ Done!
 
 ```
 
-Test our rule
+8. Test our rule
 
 ```bash
 (elastalert)[dave@elk /usr/local/elastalert]# ./bin/elastalert-test-rule etc/rules/frequency_nginx_404.yaml
 [...]
 ```
 
-Launch ElastAlert (in a tmux session, maybe?)
+9. Launch ElastAlert (in a tmux session, maybe?)
 
 ```bash
 (elastalert)[dave@elk /usr/local/elastalert]$ ./bin/elastalert --config etc/config.yml --debug
