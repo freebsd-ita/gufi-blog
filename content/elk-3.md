@@ -1,7 +1,8 @@
 Title: ELK Stack (Elasticsearch, Logstash and Kibana) on FreeBSD - Part 3
-Date: 2016-02-23 06:44
+Date: 2016-03-16 16:03
 Category: How-Tos
 Tags: ELK, ElasticSearch, Kibana, Logstash, FreeBSD, Logging, Graphs
+Status: published
 Authors: Davide D'Amico
 Summary: Third part on the series of how-to's on the ELK (ElasticSearch, Logstash, Kibana) stack on FreeBSD
 
