@@ -220,6 +220,6 @@ In this case, having an in house tool to parse your application logs will allow 
 * to be able to search all your logs at once (like grepping on a syslog-ng basedir with improved superpowers) or with a better semantics (i.e. spotting trends)
 * to create dashboards (for your management, you know...) or alerts (because you need a good reason to skip that boring meeting, right?)
 
-ELK engineers suggest to use ELK not only for **DEBUG**/**ERROR** messages, but also for the application ones: this will add a great value to your logs and, once again, the world will be a safer place thanks to you, too.
+ELK engineers suggest to use ELK not only for **DEBUG**/**ERROR** messages, but also for the application ones: this will add a great value to your logs and, once again, the world will be a safer place thanks to you, bro.
 
 There were no screenshots in this article, so that's a potato for you [here](http://saibateku.net/potato/potato.jpg)
