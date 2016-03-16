@@ -14,7 +14,7 @@ Summary: Third part on the series of how-to's on the ELK (ElasticSearch, Logstas
 >
 
 To create alerts for our ELK setup, we can use different methods.
-The one I will show you is based on ElastAlert from Yelp.
+The one I will show you is based on ElastAlert from Yelp [here](https://github.com/Yelp/elastalert).
 
 
 1. Let's install ElastAlert (no port is available, so I will install it manually in a virtualenv).
