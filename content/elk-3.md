@@ -203,15 +203,15 @@ xforwardedfor: "xxx.xxx.xxx.xxx"
 Once removed the --debug parameter, we will start receiving e-mails. (yay!)
 
 
-Before leaving...
-
+Before leaving
+--------------
 
 Few words to answer the question 'Ok, so how can this be useful to me/my company/my fiancee?'
 
 Many of us, sysadmins (or gods), have used Nagios and its derivatives for years but it's time now to say Nagios goodbye (and thanks for all the fish).
 
 
-Tools like ELK or OpenTSDB/InfluxDB/KairosDB and Bosun/Prometheus have been created to give us a new generation of more suitable tools in environments that become bigger and bigger: I know, to create and manage an ELK stack (or a OpenTSDB/Grafana/Bosun stack) requires more effort than to manage a Nagios box, but it's an overhead you will soon get used to (and probably you already have an hadoop/hbase installation to manage, right?).
+Tools like ELK or **OpenTSDB** (or InfluxDB/KairosDB) and **Bosun**/**Prometheus** have been created to give us a new generation of more suitable tools in environments that become bigger and bigger: I know, to create and manage an ELK stack (or a OpenTSDB/Grafana/Bosun stack) requires more effort than to manage a Nagios box, but it's an overhead you will soon get used to (and probably you already have an hadoop/hbase installation to manage, right?).
 
 In this case, having an in house tool to parse your application logs will allow you:
 
@@ -222,4 +222,4 @@ In this case, having an in house tool to parse your application logs will allow 
 
 ELK engineers suggest to use ELK not only for **DEBUG**/**ERROR** messages, but also for application ones: this will add a great value to your logs and, once again, the world will be a safer place thanks to you, too.
 
-There were no screenshots in this article, so that's a potato for you: [http://saibateku.net/potato/potato.jpg]
+There were no screenshots in this article, so that's a potato for you [here](http://saibateku.net/potato/potato.jpg)
