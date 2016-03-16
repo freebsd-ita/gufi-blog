@@ -18,7 +18,7 @@ To create alerts for our ELK setup, we can use different methods.
 The one I will show you is based on [ElastAlert](https://github.com/Yelp/elastalert) from Yelp.
 
 
-1. Let's install ElastAlert (no port is available, so I will install it manually in a virtualenv).
+Let's install ElastAlert (no port is available, so I will install it manually in a virtualenv).
 
 
 We need to be root (and use bash - for the virtualenv)
@@ -30,7 +30,7 @@ sudo su
 ```
 
 
-2. Install py-virtualenv
+Install py-virtualenv
 
 ```bash
 
@@ -38,7 +38,7 @@ portmaster devel/py-virtualenv
 
 ```
 
-3. Create and use a virtualenv
+Create and use a virtualenv
 
 ```bash
 virtualenv /usr/local/elastalert
@@ -46,7 +46,7 @@ source /usr/local/elastalert/bin/activate
 mkdir -p /usr/local/elastalert/etc
 ```
 
-4. Download and install the repo
+Download and install the repo
 
 
 ```bash
@@ -62,7 +62,7 @@ pip install -r requirements.txt
 pip install -r requirements.txt
 ```
 
-4. Create the elastalert config file in __/usr/local/elastalert/etc/config.yml__
+Create the elastalert config file in __/usr/local/elastalert/etc/config.yml__
 
 ```yaml
 rules_folder: /usr/local/elastalert/etc/rules
@@ -97,13 +97,13 @@ alert_time_limit:
   days: 2
 ```
 
-5. Create the rules directory
+Create the rules directory
 
 ```bash
 mkdir -p /usr/local/elastalert/etc/rules
 ```
 
-6. Create an alert (frequency based) that will send an email if more than 9 events will happen in 1 hour with status: 404 and type: nginx
+Create an alert (frequency based) that will send an email if more than 9 events will happen in 1 hour with status: 404 and type: nginx
 
 In __/usr/local/elastalert/etc/rules/frequency_nginx_404.yaml__
 
@@ -129,7 +129,7 @@ email:
 
 ```
 
-7. Create an index for metadata storage
+Create an index for metadata storage
 
 ```bash
 
@@ -148,14 +148,14 @@ Done!
 
 ```
 
-8. Test our rule
+Test our rule
 
 ```bash
 (elastalert)[dave@elk /usr/local/elastalert]# ./bin/elastalert-test-rule etc/rules/frequency_nginx_404.yaml
 [...]
 ```
 
-9. Launch ElastAlert (in a tmux session, maybe?)
+Launch ElastAlert (in a tmux session, maybe?)
 
 ```bash
 (elastalert)[dave@elk /usr/local/elastalert]$ ./bin/elastalert --config etc/config.yml --debug
