@@ -163,7 +163,7 @@ INFO:elastalert:Ran Large Number of 404 Responses from 2016-02-16 17:22 CET to 2
 ```
 
 <evil>
-Let's generate some http/404 (again, it's time to let the world know how much you agree with the systemd architecture)
+Let's generate some **http/404** (again, it's time to let the world know how much you agree with the systemd architecture)
 </evil>
 
 ```
@@ -200,7 +200,7 @@ upstream_addr: -
 xforwardedfor: "xxx.xxx.xxx.xxx"
 ```
 
-Once removed the --debug parameter, we will start receiving e-mails. (yay!)
+Once removed the **--debug** parameter, we will start receiving e-mails. (yay!)
 
 
 Before leaving
