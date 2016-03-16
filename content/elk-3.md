@@ -206,9 +206,9 @@ Once removed the --debug parameter, we will start receiving e-mails. (yay!)
 Before leaving
 --------------
 
-Few words to answer the question 'Ok, so how can this be useful to me/my company/my fiancee?'
+Few words to answer the question *'Ok, so how can this be useful to me/my company/my fiancee?'*
 
-Many of us, sysadmins (or gods), have used Nagios and its derivatives for years but it's time now to say Nagios goodbye (and thanks for all the fish).
+Many of us, sysadmins (or gods), have used **Nagios** and its derivatives (Zabbix/Icinga) for years but it's time now to say Nagios goodbye (and thanks for all the fish).
 
 
 Tools like ELK or **OpenTSDB** (or InfluxDB/KairosDB) and **Bosun**/**Prometheus** have been created to give us a new generation of more suitable tools in environments that become bigger and bigger: I know, to create and manage an ELK stack (or a OpenTSDB/Grafana/Bosun stack) requires more effort than to manage a Nagios box, but it's an overhead you will soon get used to (and probably you already have an hadoop/hbase installation to manage, right?).
