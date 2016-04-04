@@ -28,7 +28,7 @@ Basically we need to apply to Makefile this patch:
  STATGRAB_DESC=         Enable statgrab-based plugins (interface, etc)
  STATSD_DESC=           Enable statsd plugin
  TOKYOTYRANT_DESC=      Enable tokyotyrant plugin
-+TSDB_DESC=             Enable tsdb plugin
++TSDB_DESC=             Enable write_tsdb plugin
  VARNISH_DESC=          Enable varnish 4.x cache statistics
  VIRT_DESC=             Enable libvirt plugin (requires XML)
  XML_DESC=              Enable XML plugins
