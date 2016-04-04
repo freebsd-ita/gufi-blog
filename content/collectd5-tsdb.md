@@ -42,6 +42,7 @@ Basically we need to apply to Makefile this patch:
 ```
 
 and this to pkg-plist:
+```
 --- pkg-plist.orig      2016-04-04 07:04:41.492617000 -0400
 +++ pkg-plist   2016-04-04 07:04:26.272999000 -0400
 @@ -72,6 +72,7 @@
