@@ -1,6 +1,7 @@
 Title: Enabling write_tsdb in net-mgmt/collectd5
 Date: 2016-04-04 16:10
 Category: How-Tos
+Status: published
 Tags: Collectd, FreeBSD, Portmaster, Ports, Net-Mgmt, Patch
 Summary: Enabling write_tsdb output plugin in net-mgmt/collectd5
 
