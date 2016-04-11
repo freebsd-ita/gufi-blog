@@ -113,7 +113,7 @@ ngx.exit(200)
 
 This will translate something like this:
 ```
-[{"values":[6584721,4633500],"dstypes":["derive","derive"],"dsnames":["rx","tx"],"time":1460360931.658,"interval":10.000,"host":"my.own.host","plugin":"interface","plugin_instance":"vtnet0","type":"if_packets","type_instance":""},[...],{"values":[0,0],"dstypes":["derive","derive"],"dsnames":["rx","tx"],"time":1460360931.658,"interval":10.000,"host":"elkn1","plugin":"interface","plugin_instance":"vtnet0","type":"if_errors","type_instance":""}]
+[{"values":[6584721,4633500],"dstypes":["derive","derive"],"dsnames":["rx","tx"],"time":1460360931.658,"interval":10.000,"host":"my.own.host","plugin":"interface","plugin_instance":"vtnet0","type":"if_packets","type_instance":""},[...],{"values":[0,0],"dstypes":["derive","derive"],"dsnames":["rx","tx"],"time":1460360931.658,"interval":10.000,"host":"my.own.host","plugin":"interface","plugin_instance":"vtnet0","type":"if_errors","type_instance":""}]
 ```
 
 to something like this:
