@@ -7,6 +7,11 @@ Summary: Enabling write_tsdb output plugin in net-mgmt/collectd5
 
 To collectd metrics from servers I use **databases/opentsdb** and **net-mgmt/collectd5**.
 
+UPDATE
+======
+
+This patch has been merged with [this](https://svnweb.freebsd.org/ports?view=revision&revision=413766)
+
 Collectd5 can natively use an **OpenTSDB** database as output but when you use the FreeBSD port,
 this output plugin isn't included (don't ask me why): here is how to patch **net-mgmt/collectd5**
 to include it.
