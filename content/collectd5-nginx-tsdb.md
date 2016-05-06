@@ -116,12 +116,20 @@ This will translate something like this:
 [{"values":[6584721,4633500],"dstypes":["derive","derive"],"dsnames":["rx","tx"],"time":1460360931.658,"interval":10.000,"host":"my.own.host","plugin":"interface","plugin_instance":"vtnet0","type":"if_packets","type_instance":""},[...],{"values":[0,0],"dstypes":["derive","derive"],"dsnames":["rx","tx"],"time":1460360931.658,"interval":10.000,"host":"my.own.host","plugin":"interface","plugin_instance":"vtnet0","type":"if_errors","type_instance":""}]
 ```
 
-to something like this:
+into something like this:
 ```
 put my.own.metric.interface.if_packets.rx 1460360931 6584721 host=my.own.host interface=vtnet0
 put my.own.metric.interface.if_packets.tx 1460360931 4633500 host=my.own.host interface=vtnet0
 put my.own.metric.interface.if_errors.rx 1460360931 0 host=my.own.host interface=vtnet0
 put my.own.metric.interface.if_errors.tx 1460360931 0 host=my.own.host interface=vtnet0
+```
+
+That's better than:
+```
+put my.own.metric.interface.vtnet0.if_packets.rx 1460360931 6584721 host=my.own.host
+put my.own.metric.interface.vtnet0.if_packets.tx 1460360931 4633500 host=my.own.host
+put my.own.metric.interface.vtnet0.if_errors.rx 1460360931 0 host=my.own.host
+put my.own.metric.interface.vtnet0.if_errors.tx 1460360931 0 host=my.own.host
 ```
 
 As you may notice, we used the cjson library in tsdb_proxy.lua, so we need to install **devel/lua-cjson**, too.
