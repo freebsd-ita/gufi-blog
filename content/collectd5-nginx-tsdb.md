@@ -5,13 +5,13 @@ Tags: Collectd, FreeBSD, Ports, Net-Mgmt, Patch, Collectd, OpenTSDB, NginX, LUA
 Summary: Use NGINX+LUA to proxy Collectd5 requests to OpenTSDB
 
 If you, like me, are using **net-mgmt/collectd5** and **databases/opentsdb** to collect
-your metrics, you probably hacked your net-mgmt/collectd5/{Makefile,pkg-plist} to enable
-its write_tsdb output plugin.
+your metrics, you probably are using **write_tsdb** to push your metrics to OpenTSDB.
+
 Sometimes you, like me, find frustrating how collectd set its metrics' names and you would
-like to move something that is in the metric's name to a generic tag (so that you can
-aggregate per tag).
-Keeping this as simple as possible (and scalable, and performant) we can let nginx (and its
-Lua engine) to do this job, let's see how.
+like to move something that is in the metric's name (i.e. network interface name) to a tag
+(so that you can aggregate using it).
+
+Keeping this as simple as possible we can let NginX (using its Lua engine) to do this job for us, let's see how.
 
 First of all, we need to enable WITH_CURL in **net-mgmt/collectd5** because of write_http
 and we have to enable write_http output plugin in **/usr/local/etc/collectd.conf**:
@@ -39,7 +39,7 @@ server {
   }
 
   location / {
-    return 501;
+    return 405;
   }
 }
 ```
@@ -124,4 +124,4 @@ put my.own.metric.interface.if_errors.rx 1460360931 0 host=my.own.host interface
 put my.own.metric.interface.if_errors.tx 1460360931 0 host=my.own.host interface=vtnet0
 ```
 
-As you may notice, we used the cjson library in tsdb_proxy.lua, so we need to install **deve/lua-cjson**, too.
+As you may notice, we used the cjson library in tsdb_proxy.lua, so we need to install **devel/lua-cjson**, too.
