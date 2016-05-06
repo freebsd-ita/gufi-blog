@@ -8,7 +8,7 @@ If you, like me, are using **net-mgmt/collectd5** and **databases/opentsdb** to 
 your metrics, you probably are using **write_tsdb** to push your metrics to OpenTSDB.
 
 Sometimes you, like me, find frustrating how collectd set its metrics' names and you would
-like to move something that is in the metric's name (i.e. network interface name) to a tag
+like to move part of the metric's name (i.e. network interface name) to a tag
 (so that you can aggregate using it).
 
 Keeping this as simple as possible we can let NginX (using its Lua engine) to do this job for us, let's see how.
