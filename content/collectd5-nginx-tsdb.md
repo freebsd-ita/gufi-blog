@@ -2,6 +2,7 @@ Title: Use NGINX+LUA to proxy collectd5 requests to OpenTSDB
 Date: 2016-05-06 00:10
 Category: How-Tos
 Tags: Collectd, FreeBSD, Ports, Net-Mgmt, Patch, Collectd, OpenTSDB, NginX, LUA
+Status: published
 Summary: Use NGINX+LUA to proxy Collectd5 requests to OpenTSDB
 
 If you, like me, are using **net-mgmt/collectd5** and **databases/opentsdb** to collect
