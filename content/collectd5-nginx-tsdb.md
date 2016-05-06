@@ -111,12 +111,12 @@ end
 ngx.exit(200)
 ```
 
-This will translate something like this:
+This will translate this JSON:
 ```
 [{"values":[6584721,4633500],"dstypes":["derive","derive"],"dsnames":["rx","tx"],"time":1460360931.658,"interval":10.000,"host":"my.own.host","plugin":"interface","plugin_instance":"vtnet0","type":"if_packets","type_instance":""},[...],{"values":[0,0],"dstypes":["derive","derive"],"dsnames":["rx","tx"],"time":1460360931.658,"interval":10.000,"host":"my.own.host","plugin":"interface","plugin_instance":"vtnet0","type":"if_errors","type_instance":""}]
 ```
 
-into something like this:
+into this:
 ```
 put my.own.metric.interface.if_packets.rx 1460360931 6584721 host=my.own.host interface=vtnet0
 put my.own.metric.interface.if_packets.tx 1460360931 4633500 host=my.own.host interface=vtnet0
